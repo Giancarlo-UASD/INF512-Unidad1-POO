@@ -82,6 +82,9 @@ namespace HelloWorld
             //de manera que tenga los datos predeterminados
             cuentas[3] = new CuentaBancaria();
             //Vamos a imprimir la información de las 4 cuentas
+            Console.Write("Presione cualquier tecla para continuar . . . "); 
+            Console.ReadKey(true); 
+            Console.Clear();
             for(int i = 0; i<4; i++)
             {
                 Console.WriteLine("Información de la cuenta #" + i);
@@ -94,6 +97,9 @@ namespace HelloWorld
             cuentas[3].retirar(4000F);
             //Por último, vamos a imprimir la información de las 4 cuentas después
             //de las modificaciones
+            Console.Write("Presione cualquier tecla para continuar . . . "); 
+            Console.ReadKey(true); 
+            Console.Clear();
             for(int i = 0; i<4; i++)
             {
                 Console.WriteLine("Información de la cuenta #" + i+1);
