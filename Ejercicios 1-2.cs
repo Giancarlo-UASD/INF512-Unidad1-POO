@@ -18,7 +18,7 @@ namespace HelloWorld
         {
             nombre_del_titular = "Giancarlo Marte";
             numero_cuenta = "A100667358";
-            balance_disponible = 4545.23;
+            balance_disponible = 4545.23F;
         }
         //En este constructor se pueden especificar los valores de los datos
         public CuentaBancaria(string nombre, string cuenta, float balance)
@@ -61,27 +61,42 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             //Primero declaramos 4 objetos sin inicializar
-            CuentaBancaria[] cuentas = new CuentaBancaria[3];
+            CuentaBancaria[] cuentas = new CuentaBancaria[4];
             string nombre, cuenta;
             float balance; 
             //Inicializamos los primeros 3 objetos con datos insertados por el usuario
             //usando el constructor que acepta datos.
             for(int i = 0; i<3; i++)
             {
-               cuentas[i] = new CuentaBancaria(nombre, cuenta, balance); 
+                Console.Clear();
+                Console.WriteLine("Introduzca los datos de la cuenta #" + i+1);
+                Console.WriteLine("Introduzca el nombre del titular: ");
+                nombre = Console.ReadLine();
+                Console.WriteLine("Introduzca el número de cuenta: ");
+                cuenta = Console.ReadLine();
+                Console.WriteLine("Introduzca el balance disponible: ");
+                balance = float.Parse(Console.ReadLine());
+                cuentas[i] = new CuentaBancaria(nombre, cuenta, balance); 
             }
             //Inicializaos el cuarto objeto con el constructor por defecto,
             //de manera que tenga los datos predeterminados
             cuentas[3] = new CuentaBancaria();
-            //Vamos a realizar unos depositos y a sacar algo de dinero:
-            cuentas[0].depositar(500);
-            cuentas[1].depositar(1000.44);
-            cuentas[2].retirar(200);
-            cuentas[3].retirar(4000);
-            //Por último, vamos a imprimir la información de las 4 cuentas
+            //Vamos a imprimir la información de las 4 cuentas
             for(int i = 0; i<4; i++)
             {
                 Console.WriteLine("Información de la cuenta #" + i);
+                cuentas[i].MostrarDetalles(); 
+            }
+            //Vamos a realizar unos depositos y a sacar algo de dinero:
+            cuentas[0].depositar(500F);
+            cuentas[1].depositar(1000.44F);
+            cuentas[2].retirar(200F);
+            cuentas[3].retirar(4000F);
+            //Por último, vamos a imprimir la información de las 4 cuentas después
+            //de las modificaciones
+            for(int i = 0; i<4; i++)
+            {
+                Console.WriteLine("Información de la cuenta #" + i+1);
                 cuentas[i].MostrarDetalles(); 
             }
         }
