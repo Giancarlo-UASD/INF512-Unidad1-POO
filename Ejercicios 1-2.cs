@@ -93,15 +93,20 @@ namespace HelloWorld
                 cuentas[i].MostrarDetalles(); 
             }
             //Vamos a realizar unos depositos y a sacar algo de dinero:
+            Console.Clear();
+            Console.WriteLine("Se harán ahora algunas operaciones predeterminadas");
+            Console.WriteLine("Presione cualquier tecla para continuar . . . "); 
+            Console.ReadKey(true); 
+            Console.Clear();
             cuentas[0].depositar(500F);
             cuentas[1].depositar(1000.44F);
             cuentas[2].retirar(200F);
             cuentas[3].retirar(4000F);
-            //Por último, vamos a imprimir la información de las 4 cuentas después
-            //de las modificaciones
-            Console.Write("Presione cualquier tecla para continuar . . . "); 
+            Console.WriteLine("Presione cualquier tecla para continuar . . . "); 
             Console.ReadKey(true); 
             Console.Clear();
+            //Por último, vamos a imprimir la información de las 4 cuentas después
+            //de las modificaciones
             for(int i = 0; i<4; i++)
             {
                 Console.WriteLine("Información de la cuenta #" + i+1);
