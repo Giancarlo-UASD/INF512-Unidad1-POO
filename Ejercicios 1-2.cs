@@ -31,6 +31,7 @@ namespace HelloWorld
         public void depositar(float cantidad)
         {
             balance_disponible += cantidad;
+            Console.WriteLine("El depósito de " + cantidad + " en la cuenta " + numero_cuenta + " fue exitoso.");
             Console.WriteLine("Su saldo actual es de: " + balance_disponible);
         }
 
@@ -40,11 +41,12 @@ namespace HelloWorld
             if(balance_disponible >= cantidad)
             {
                 balance_disponible -= cantidad;
-                Console.WriteLine("El retiro fue exitoso.");
+                Console.WriteLine("El retiro de" + cantidad + " de la cuenta " + numero_cuenta + " fue exitoso.");
                 Console.WriteLine("Su saldo actual es de: " + balance_disponible);
             }
             else
             {
+                Console.WriteLine("El retiro de" + cantidad + " de la cuenta " + numero_cuenta + " NO fue exitoso.");
                 Console.WriteLine("No tiene saldo suficiente para realizar ese retiro.");
             }
         }
