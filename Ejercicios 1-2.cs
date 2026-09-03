@@ -41,12 +41,12 @@ namespace HelloWorld
             if(balance_disponible >= cantidad)
             {
                 balance_disponible -= cantidad;
-                Console.WriteLine("El retiro de" + cantidad + " de la cuenta " + numero_cuenta + " fue exitoso.");
+                Console.WriteLine("El retiro de " + cantidad + " de la cuenta " + numero_cuenta + " fue exitoso.");
                 Console.WriteLine("Su saldo actual es de: " + balance_disponible);
             }
             else
             {
-                Console.WriteLine("El retiro de" + cantidad + " de la cuenta " + numero_cuenta + " NO fue exitoso.");
+                Console.WriteLine("El retiro de " + cantidad + " de la cuenta " + numero_cuenta + " NO fue exitoso.");
                 Console.WriteLine("No tiene saldo suficiente para realizar ese retiro.");
             }
         }
@@ -71,7 +71,8 @@ namespace HelloWorld
             for(int i = 0; i<3; i++)
             {
                 Console.Clear();
-                Console.WriteLine("Introduzca los datos de la cuenta #" + i+1);
+                Console.WriteLine("\x1b[3J");
+                Console.WriteLine("Introduzca los datos de la cuenta #" + (i+1));
                 Console.WriteLine("Introduzca el nombre del titular: ");
                 nombre = Console.ReadLine();
                 Console.WriteLine("Introduzca el número de cuenta: ");
@@ -87,13 +88,15 @@ namespace HelloWorld
             Console.Write("Presione cualquier tecla para continuar . . . "); 
             Console.ReadKey(true); 
             Console.Clear();
+            Console.WriteLine("\x1b[3J");
             for(int i = 0; i<4; i++)
             {
-                Console.WriteLine("Información de la cuenta #" + i);
+                Console.WriteLine("Información de la cuenta #" + (i+1));
                 cuentas[i].MostrarDetalles(); 
             }
             //Vamos a realizar unos depositos y a sacar algo de dinero:
             Console.Clear();
+            Console.WriteLine("\x1b[3J");
             Console.WriteLine("Se harán ahora algunas operaciones predeterminadas");
             Console.WriteLine("Presione cualquier tecla para continuar . . . "); 
             Console.ReadKey(true); 
@@ -105,11 +108,12 @@ namespace HelloWorld
             Console.WriteLine("Presione cualquier tecla para continuar . . . "); 
             Console.ReadKey(true); 
             Console.Clear();
+            Console.WriteLine("\x1b[3J");
             //Por último, vamos a imprimir la información de las 4 cuentas después
             //de las modificaciones
             for(int i = 0; i<4; i++)
             {
-                Console.WriteLine("Información de la cuenta #" + i+1);
+                Console.WriteLine("Información de la cuenta #" + (i+1));
                 cuentas[i].MostrarDetalles(); 
             }
         }
